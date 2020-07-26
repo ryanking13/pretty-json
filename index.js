@@ -37,6 +37,7 @@ const contentTypeHTML = {
   },
 }
 
+// Adapted from: https://developers.cloudflare.com/workers/templates/pages/fetch_json/
 async function gatherResponse(response) {
   const { headers } = response
   const contentType = headers.get('content-type') || ''
@@ -51,6 +52,7 @@ async function gatherResponse(response) {
   }
 }
 
+// Adapted from: https://stackoverflow.com/questions/4810841/pretty-print-json-using-javascript
 function highlightJSON(json) {
   if (typeof json != 'string') {
     json = JSON.stringify(json, undefined, 2)
